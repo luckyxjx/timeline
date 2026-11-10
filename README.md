@@ -1,6 +1,6 @@
 # Timeline Drawing Challenge
 
-A simple, beautiful timeline app for tracking daily drawing challenges. Built with vanilla JavaScript - no frameworks, no build step, no dependencies.
+A simple, beautiful timeline app for tracking daily drawing challenges. Built with Basic JavaScript - no frameworks, no build step, no dependencies.
 
 ## Features
 
@@ -24,7 +24,7 @@ A simple, beautiful timeline app for tracking daily drawing challenges. Built wi
 
 ## Tech Stack
 
-- Vanilla JavaScript
+- JavaScript
 - CSS Grid & Flexbox
 - HTML5 Canvas (for image export)
 - IndexedDB (for storage)
