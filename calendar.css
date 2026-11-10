@@ -1,0 +1,30 @@
+/* calendar.css: look of the date picker. Change the --cal-* values to restyle it. */
+.cal{--cal-ink:var(--ink);--cal-muted:var(--muted);--cal-bg:var(--board);--cal-accent:var(--pin);--cal-on-accent:#fff;--cal-off:var(--muted);
+margin-top:8px;background:var(--cal-bg);color:var(--cal-ink);border:2px solid var(--cal-ink);border-radius:14px;padding:8px 10px 10px;font-family:inherit}
+.cal button{font:inherit;color:var(--cal-ink);background:none;border:0;cursor:pointer;padding:0}
+.cal .cal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.cal .cal-title{font-size:28px;font-weight:700;color:var(--cal-ink)}
+.cal .cal-nav{font-size:34px;line-height:1;padding:0 10px;border-radius:8px}
+.cal .cal-nav:disabled{color:var(--cal-off);opacity:.4;cursor:default}
+.cal .cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+.cal .cal-days{margin-top:3px}
+.cal .cal-w{color:var(--cal-muted);font-weight:700}
+.cal .cal-d{height:38px;font-size:22px;color:var(--cal-ink);border:2px solid transparent;border-radius:10px;position:relative}
+.cal .cal-d.td{border-color:var(--cal-ink)}
+.cal .cal-d.sel{background:var(--cal-accent);color:var(--cal-on-accent);border-color:var(--cal-accent);transform:rotate(-3deg)}
+.cal .cal-d.off{color:var(--cal-off);opacity:.5;cursor:default;text-decoration:line-through}
+.cal .cal-d.occ::after{content:"";position:absolute;top:3px;right:4px;width:7px;height:7px;transform:rotate(45deg);background:var(--cal-accent)}
+.cal .cal-d.sel.occ::after{background:var(--cal-on-accent)}
+.cal .cal-dot{position:absolute;left:50%;bottom:2px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--cal-accent)}
+.cal .cal-d.sel .cal-dot{background:var(--cal-on-accent)}
+.cal .cal-d:focus-visible,.cal .cal-nav:focus-visible,.cal .cal-today:focus-visible{outline:3px solid var(--cal-accent);outline-offset:1px}
+.cal .cal-ft{display:flex;justify-content:space-between;align-items:center;margin-top:6px;color:var(--cal-muted);font-size:20px}
+.cal .cal-today{font-size:22px;font-weight:700;color:var(--cal-accent);padding:0 6px}
+.cal .cal-today:disabled{color:var(--cal-off);opacity:.5;cursor:default}
+.fv{display:flex;justify-content:space-between;align-items:center;width:100%;font:inherit;font-size:22px;color:var(--ink);background:var(--board);border:2px solid var(--ink);border-radius:10px;padding:4px 10px;cursor:pointer;text-align:left}
+.fv[aria-expanded="true"]{border-color:var(--pin)}
+.fv:focus-visible{outline:3px solid var(--pin);outline-offset:2px}
+/* Pop-up placement: the calendar floats in a fixed layer above everything */
+.dp{position:relative}
+.pop{position:fixed;z-index:1000;width:min(340px,calc(100vw - 56px))}
+.pop .cal{margin-top:0;box-shadow:0 14px 30px var(--shadow,rgba(0,0,0,.35))}
